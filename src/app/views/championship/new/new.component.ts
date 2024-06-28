@@ -142,12 +142,12 @@ export class NewComponent {
       let matchup1C_winner_id = 0;
       let matchup1D_winner_id = 0;
 
-      if (matchup1A.team_1_goals == matchup1B.team_2_goals)  {
+      if (matchup1A.team_1_goals == matchup1A.team_2_goals)  {
 
         matchup1A_winner_id = matchup1A.team_1_id;
       } else {
 
-        matchup1A_winner_id = (matchup1A.team_1_goals > matchup1B.team_2_goals) ? matchup1A.team_1_id : matchup1A.team_2_id;
+        matchup1A_winner_id = (matchup1A.team_1_goals > matchup1A.team_2_goals) ? matchup1A.team_1_id : matchup1A.team_2_id;
       }
 
       if (matchup1B.team_1_goals == matchup1B.team_2_goals)  {
