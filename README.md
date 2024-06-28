@@ -27,3 +27,5 @@ export const environment = {
 
 <p>A porta padrão é a 4200, portanto, a API pode ser acessada através do endereço localhost:4200</p>
 <p>Para usufruir das funcionalidade, é necessário primeiro se cadastrar e depois cadastrar os times.</p>
+
+
