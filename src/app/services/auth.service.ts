@@ -1,58 +1,63 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
-import { tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): boolean | void {
+  login(email: string, password: string): Promise<any> {
 
-    this.apiService.post<any>('/login', {
+    return new Promise((resolve, reject) => {
 
-      email: email,
-      password: password
-    }).subscribe(response => {
+      this.http.post<any>(environment.apiUrl + '/login', {
 
-      if (response.success == 'true') {
+        email: email,
+        password: password
+      }).subscribe(response => {
 
-        localStorage.setItem(environment.authTokenKey, response.data.token);
-        return true;
-      } else {
+        if (response.success) {
 
-        return false;
-      }
+          localStorage.setItem(environment.authTokenKey, response.data.token);
+          resolve(true);
+        } else {
+
+          reject('error');
+        }
+      });
     });
   }
 
-  register(name: string, email: string, password: string, password_confirmation: string): boolean | void {
+  register(name: string, email: string, password: string, password_confirmation: string): Promise<any> {
 
-    this.apiService.post<any>('/login', {
+    return new Promise((resolve, reject) => {
 
-      name: name,
-      email: email,
-      password: password,
-      password_confirmation: password_confirmation
-    }).subscribe(response => {
+      this.http.post<any>(environment.apiUrl + '/register', {
 
-      if (response.success == 'true') {
+        name: name,
+        email: email,
+        password: password,
+        password_confirmation: password_confirmation
+      }).subscribe(response => {
 
-        localStorage.setItem(environment.authTokenKey, response.data.token);
-        return true;
-      } else {
+        if (response.success) {
 
-        return false;
-      }
+          localStorage.setItem(environment.authTokenKey, response.data.token);
+          resolve(true);
+        } else {
+
+          reject('error');
+        }
+      });
     });
   }
 
-  logout()  {
+  logout() {
 
-    return !!localStorage.getItem(environment.authTokenKey);
+    return localStorage.removeItem(environment.authTokenKey);
   }
 
   getAuthToken(): string | null {
