@@ -158,20 +158,20 @@ export class NewComponent {
         matchup1B_winner_id = (matchup1B.team_1_goals > matchup1B.team_2_goals) ? matchup1B.team_1_id : matchup1B.team_2_id;
       }
 
-      if (matchup1C.team_1_goals == matchup1B.team_2_goals)  {
+      if (matchup1C.team_1_goals == matchup1C.team_2_goals)  {
 
         matchup1C_winner_id = matchup1C.team_1_id;
       } else {
 
-        matchup1C_winner_id = (matchup1C.team_1_goals > matchup1B.team_2_goals) ? matchup1C.team_1_id : matchup1C.team_2_id;
+        matchup1C_winner_id = (matchup1C.team_1_goals > matchup1C.team_2_goals) ? matchup1C.team_1_id : matchup1C.team_2_id;
       }
 
-      if (matchup1D.team_1_goals == matchup1B.team_2_goals)  {
+      if (matchup1D.team_1_goals == matchup1D.team_2_goals)  {
 
         matchup1D_winner_id = matchup1D.team_1_id;
       } else {
 
-        matchup1D_winner_id = (matchup1D.team_1_goals > matchup1B.team_2_goals) ? matchup1D.team_1_id : matchup1D.team_2_id;
+        matchup1D_winner_id = (matchup1D.team_1_goals > matchup1D.team_2_goals) ? matchup1D.team_1_id : matchup1D.team_2_id;
       }
 
       const matchup2A = {
