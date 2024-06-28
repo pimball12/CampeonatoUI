@@ -1,14 +1,17 @@
 <h1>Times</h1>
 <hr>
 
-<div class="row p-3">
-  <div class="col-md-4">
-    <input type="text" class="form-control" placeholder="Nome do Time" style="border: 1px solid #c9c9c9;" />
+<form (ngSubmit)="add()">
+  <div class="row p-3">
+    <div class="col-md-4">
+      <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Nome do Time"
+        style="border: 1px solid #c9c9c9;" />
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-success">Adicionar</button>
+    </div>
   </div>
-  <div class="col-md-2">
-    <button class="btn btn-success">Adicionar</button>
-  </div>
-</div>
+</form>
 
 <table class="table table-striped">
   <thead>
@@ -18,37 +21,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
-    </tr>
-    <tr>
-      <td>Time 1</td>
-      <td><button class="btn btn-danger">Remover</button></td>
+    <tr *ngFor="let team of teams; index as i">
+      <td>{{team.name}}</td>
+      <td><button (click)="delete(team.id, i)" class="btn btn-danger">Remover</button></td>
     </tr>
   </tbody>
 </table>

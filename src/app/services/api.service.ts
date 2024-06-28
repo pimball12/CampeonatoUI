@@ -21,28 +21,28 @@ export class ApiService {
     });
   }
 
-  getArray<T>(path: string): Observable<T[]> {
+  getArray(path: string): Observable<any> {
 
-    return this.http.get<T[]>(environment.apiUrl + path, {headers: this.getHeaders()});
+    return this.http.get<any[]>(environment.apiUrl + path, {headers: this.getHeaders()});
   }
 
-  getObject<T>(path: string, id: number): Observable<T> {
+  getObject(path: string): Observable<any> {
 
-    return this.http.get<T>(environment.apiUrl + path + `/${id}`, {headers: this.getHeaders()});
+    return this.http.get<any>(environment.apiUrl + path, {headers: this.getHeaders()});
   }
 
-  post<T>(path: string, data: T): Observable<T>  {
+  post(path: string, data: any): Observable<any>  {
 
-    return this.http.post<T>(environment.apiUrl + path, data, {headers: this.getHeaders()});
+    return this.http.post<any>(environment.apiUrl + path, data, {headers: this.getHeaders()});
   }
 
-  put<T>(path: string, id: number, data: T): Observable<T>  {
+  put(path: string, id: number, data: any): Observable<any>  {
 
-    return this.http.put<T>(environment.apiUrl + path + `/${id}`, data, {headers: this.getHeaders()});
+    return this.http.put<any>(environment.apiUrl + path + `/${id}`, data, {headers: this.getHeaders()});
   }
 
-  delete<T>(path: string, id: number): Observable<T> {
+  delete(path: string, id: number): Observable<any> {
 
-    return this.http.delete<T>(environment.apiUrl + path + `/${id}`, {headers: this.getHeaders()});
+    return this.http.delete<any>(environment.apiUrl + path + `/${id}`, {headers: this.getHeaders()});
   }
 }

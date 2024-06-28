@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Sidebar 02</title>
+  <title>Meu Campeonato</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,7 +15,7 @@
 <body>
 
   <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar">
+    <nav *ngIf="currentRoute != '/login' && currentRoute != '/register'" id="sidebar">
       <div class="custom-menu">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
           <i class="fa fa-bars"></i>
@@ -23,7 +23,7 @@
         </button>
       </div>
       <div class="p-4 pt-5">
-        <h1><a href="index.html" class="logo">Splash</a></h1>
+        <h1><a href="index.html" class="logo">Meu Campeonato</a></h1>
         <ul class="list-unstyled components mb-5">
           <li>
             <a href="#" [routerLink]="['/']"><i class="fa fa-futbol-o" aria-hidden="true"></i> Gerar Campeonato</a>
@@ -35,7 +35,7 @@
             <a href="#" [routerLink]="['/teams']"><i class="fa fa-users" aria-hidden="true"></i> Times</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+            <a style="cursor: pointer;" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
           </li>
         </ul>
       </div>

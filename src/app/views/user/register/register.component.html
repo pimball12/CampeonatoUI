@@ -1,1 +1,36 @@
-<p>register works!</p>
+<div class="d-flex align-items-center justify-content-center" style="height:500px">
+  <div class="card p-3" style="width: 500px;">
+    <div clas="row">
+      <form (ngSubmit)="register()">
+        <div class="col-md-12">
+          <h1><a [routerLink]="['/']" class="logo">Meu Campeonato</a></h1>
+          <p style="font-size: 15pt;">Registrar</p>
+        </div>
+
+        <div class="col-md-12">
+          <input type="text" [(ngModel)]="email" name="email" class="form-control" placeholder="E-mail"
+            style="border: 1px solid #c9c9c9;" />
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Nome"
+            style="border: 1px solid #c9c9c9;" />
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Senha"
+            style="border: 1px solid #c9c9c9;" />
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <input type="password" [(ngModel)]="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirme a Senha"
+            style="border: 1px solid #c9c9c9;" />
+        </div>
+
+        <div class="col-md-12 mt-3">
+          <button type="submit" class="btn btn-success" style="border: 1px solid #c9c9c9;">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,239 +1,91 @@
 <h1>Partidas passadas</h1>
+<div *ngFor="let championship of championships; index as i">
+  <hr>
+  <h3>#{{championship.id}}: {{championship.name}}</h3>
+  <hr>
+  <div class="row" *ngIf="!!championship && championship.matchups.length">
+    <div class="col-md-4">
+      <h2>Fase 1</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[0].team_1_goals}}</b> - {{championship.matchups[0].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[0].team_2_goals}}</b> - {{championship.matchups[0].team_2.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[1].team_1_goals}}</b> - {{championship.matchups[1].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[1].team_2_goals}}</b> - {{championship.matchups[1].team_2.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[2].team_1_goals}}</b> - {{championship.matchups[2].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[2].team_2_goals}}</b> - {{championship.matchups[2].team_2.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[3].team_1_goals}}</b> - {{championship.matchups[3].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[3].team_2_goals}}</b> - {{championship.matchups[3].team_2.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<hr>
-<h3>#19283</h3>
-<hr>
-<div class="row">
-  <div class="col-md-4">
-    <h2>Fase 1</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
+    <div class="col-md-4" style="margin-top: 160px;">
+      <h2>Fase 2</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[4].team_1_goals}}</b> - {{championship.matchups[4].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[4].team_2_goals}}</b> - {{championship.matchups[4].team_2.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[5].team_1_goals}}</b> - {{championship.matchups[5].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[5].team_2_goals}}</b> - {{championship.matchups[5].team_2.name}}</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-md-4" style="margin-top: 160px;">
-    <h2>Fase 2</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
+    <div class="col-md-4" style="margin-top: 140px;">
+      <h2>Final</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[7].team_1_goals}}</b> - {{championship.matchups[7].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[7].team_2_goals}}</b> - {{championship.matchups[7].team_2.name}}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-md-4" style="margin-top: 235px;">
-    <h2>Fase 3</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
-<h3>#19283</h3>
-<hr>
-<div class="row">
-  <div class="col-md-4">
-    <h2>Fase 1</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4" style="margin-top: 160px;">
-    <h2>Fase 2</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4" style="margin-top: 235px;">
-    <h2>Fase 3</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
-<h3>#19283</h3>
-<hr>
-<div class="row">
-  <div class="col-md-4">
-    <h2>Fase 1</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4" style="margin-top: 160px;">
-    <h2>Fase 2</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4" style="margin-top: 235px;">
-    <h2>Fase 3</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card p-2 m-2 text-center">
-          <p class="mt-2"><b>0</b> - Time 1</p>
-          <hr>
-          <p ><b>2</b> - Time 2</p>
+      <h2>Segundo Lugar</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card p-2 m-2 text-center">
+            <p class="mt-2"><b>{{championship.matchups[6].team_1_goals}}</b> - {{championship.matchups[6].team_1.name}}</p>
+            <hr>
+            <p ><b>{{championship.matchups[6].team_2_goals}}</b> - {{championship.matchups[6].team_2.name}}</p>
+          </div>
         </div>
       </div>
     </div>

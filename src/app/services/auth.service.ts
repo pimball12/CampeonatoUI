@@ -17,13 +17,21 @@ export class AuthService {
 
         email: email,
         password: password
-      }).subscribe(response => {
+      }).subscribe({
 
-        if (response.success) {
+        next: response => {
 
-          localStorage.setItem(environment.authTokenKey, response.data.token);
-          resolve(true);
-        } else {
+          if (response.success) {
+
+            localStorage.setItem(environment.authTokenKey, response.data.token);
+            resolve(true);
+          } else {
+
+            reject('error');
+          }
+        },
+
+        error: error => {
 
           reject('error');
         }
@@ -41,13 +49,21 @@ export class AuthService {
         email: email,
         password: password,
         password_confirmation: password_confirmation
-      }).subscribe(response => {
+      }).subscribe({
 
-        if (response.success) {
+        next: response => {
 
-          localStorage.setItem(environment.authTokenKey, response.data.token);
-          resolve(true);
-        } else {
+          if (response.success) {
+
+            localStorage.setItem(environment.authTokenKey, response.data.token);
+            resolve(true);
+          } else {
+
+            reject('error');
+          }
+        },
+
+        error: error => {
 
           reject('error');
         }
